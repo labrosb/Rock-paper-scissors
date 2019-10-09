@@ -1,0 +1,9 @@
+{
+	"name": "rock-paper-scissors",
+	"version": "1.0.0",
+	"description": "Server connecting the rock-paper-scissors apps",
+	"dependencies": {
+			"express": "^4.15.2",
+			"socket.io": "^2.0.4"
+	}
+}
