@@ -1,0 +1,71 @@
+<div class="gamePlay">
+  <div class="header">
+    <h1>
+      <img class="backArrow" (click)="back()" src="/assets/images/back-icon.png" alt="Back">
+      Rock Paper Scissors
+      <img class="historyIcon" (click)="showHistory()" src="/assets/images/history-icon.png" alt="Back">
+    </h1>
+  </div>
+  <div class="result">
+    <h2 *ngIf="result==-1"> Make your move.. </h2>
+    <h2 *ngIf="result==0"> Draw </h2>
+    <h2 *ngIf="result==1"> You Won!! </h2>
+    <h2 *ngIf="result==2"> You Lost.. </h2>
+  </div>
+  <div class="profile">
+    <div class="player"> You </div>
+    <div class="score"> Wins : {{player1_Points}} </div>
+    <div class="figure">
+      <img *ngIf="figure1==1" src="/assets/images/rock.png" alt="rock">
+      <img *ngIf="figure1==2" src="/assets/images/paper.png" alt="paper">
+      <img *ngIf="figure1==3" src="/assets/images/scissors.png" alt="scissors">
+    </div>
+  </div>
+  <div class="profile opponent">
+    <div class="player"> Opponent </div>
+    <div class="score"> Wins : {{player2_Points}} </div>
+    <div class="figure_2">
+      <img *ngIf="figure2==1" src="/assets/images/rock.png" alt="rock">
+      <img *ngIf="figure2==2" src="/assets/images/paper.png" alt="paper">
+      <img *ngIf="figure2==3" src="/assets/images/scissors.png" alt="scissors">
+    </div>
+  </div>
+  <div class="playChoices">
+    <div *ngIf="result >= 0; then restart else playChoices"></div>
+  </div>
+  <ng-template #restart>
+    <button mat-fab class="hidden"></button>
+    <button mat-fab class="restart" (click)=reStart()> </button>
+    <button mat-fab class="hidden"></button>
+  </ng-template>
+
+  <ng-template #playChoices>
+    <button mat-fab class="rock" (click)=play(1)> </button>
+    <button mat-fab class="paper" (click)=play(2)> </button>
+    <button mat-fab class="scissors" (click)=play(3)> </button>
+  </ng-template>
+
+  <div *ngIf="historyON" class="popup-container history">
+    <div class="exit" (click)=hideHistory()> <strong> X </strong> </div>
+    <div class="popup-content">
+      <h1> History </h1>
+       <div class="round" *ngFor="let round of history; index as i">
+         <h2> Round : {{i + 1}} </h2>
+         <div class='figure small-aligned'>
+           <img *ngIf="round.playerMove==1" src="/assets/images/rock.png" alt="rock">
+           <img *ngIf="round.playerMove==2" src="/assets/images/paper.png" alt="paper">
+           <img *ngIf="round.playerMove==3" src="/assets/images/scissors.png" alt="scissors">
+         </div>
+         <div class='opponent small-aligned'>
+           <img *ngIf="round.opponentMove==1" src="/assets/images/rock.png" alt="rock">
+           <img *ngIf="round.opponentMove==2" src="/assets/images/paper.png" alt="paper">
+           <img *ngIf="round.opponentMove==3" src="/assets/images/scissors.png" alt="scissors">
+         </div>
+         <h2 *ngIf="round.result==0"> Draw </h2>
+         <h2 *ngIf="round.result==1"> You Won </h2>
+         <h2 *ngIf="round.result==2"> You Lost </h2>
+       </div>
+       <div *ngIf="history.length==0"> No games have played yet... </div>
+    </div>
+  </div>
+</div>

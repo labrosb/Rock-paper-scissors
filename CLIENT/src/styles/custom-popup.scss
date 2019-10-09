@@ -1,0 +1,26 @@
+.popup-container {
+  width: 100%;
+  background-color: #bee5bd;
+  border: 2px solid #0a1e1c;
+  border-radius: 10px;
+  padding-bottom: 50px;
+  top:50px; left:0; right:0;
+  position: absolute;
+  z-index: 9999;
+  h1 {
+	font-size: 38px;
+  }
+  .exit {
+    background-color: #0a1e1c;
+    border-bottom-left-radius: 20px;
+    color: #bee5bd;
+    padding: 15px;
+    right: 0;
+    position:absolute;
+    cursor: pointer;
+  }
+  .popup-content {
+    font-size: 20px;
+    text-align: center;
+  }
+}

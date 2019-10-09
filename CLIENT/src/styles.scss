@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: CartoonScript;
+    src: url('/assets/fonts/Cartoon Script.ttf');
+}
+html{
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  background: linear-gradient(to right, #348067 0%, #82a7a4 50%, #348067 100%);
+  color: #0a1e1c;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  .routeContainer {
+    position: relative;
+  }
+  .routeContainer>* {
+    display: block;
+  }
+  .hidden{
+    opacity: 0;
+  }
+}

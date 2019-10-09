@@ -23,6 +23,7 @@ dist/
 tmp/
 temp/
 hooks/
+e2e/
 node_modules/
 environments/
 $RECYCLE.BIN/
