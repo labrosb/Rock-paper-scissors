@@ -9,7 +9,9 @@ Try it here: https://labrosb.github.io/xGitHub-Finder-Angular4
 An online version of the famous rock paper scissors game implemented with Angular and NodeJS. 
 It supports single and multi-play!
 
-The system consists of an client and a server side which supports the multi-player mode.
+The system consists of a client and a server side which supports the multi-player mode
+ - The client side is made in Angular using RxJS observables.
+ - The server side is made in nodeJS using Web Sockets.
 
 Year of implementation : 2018
 
